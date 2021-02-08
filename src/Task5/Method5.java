@@ -12,7 +12,9 @@ public class Method5 {
         System.out.print("Введите длинну массива:");
         int n = scanner.nextInt();
         int array[] = new int[n];
-        minMaxMin(array);
+        in(array);
+        int minMax = minMaxMin(array);
+        System.out.println("Число которое меньше максимального ,но больше всех других элементов: " + minMax);
     }
 
     public static int[] in(int[] array) {                       // метод инициализации
@@ -25,10 +27,8 @@ public class Method5 {
         return array;
     }
 
-    public static int[] minMaxMin(int array[]) {        // метод нахождения 2-го по вличине числа в массиве
-        int array1[] = in(array);                         // используем какой то массив и инициализируем его
-
-        int a = 0;                                          // сортируем по возрастанию
+    public static int minMaxMin(int array[]) {
+        int a = 0;
         while (a == 0) {
             a = 1;
 
@@ -41,11 +41,10 @@ public class Method5 {
                 }
             }
         }
-        System.out.println("Отсортированный массив:");
-        System.out.println(Arrays.toString(array));
-        System.out.println("Число которое меньше максимального ,но больше всех других элементов");
-        System.out.println(array[array.length - 2]);
-        return array1;
+//        System.out.println("Отсортированный массив:");
+//        System.out.println(Arrays.toString(array));
+        int num = array[array.length - 2];
+        return num;
     }
 }
 

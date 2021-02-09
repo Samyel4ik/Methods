@@ -13,10 +13,13 @@ public class Method13 {
         System.out.print("Введите начало отрезка:");
         int n = scanner.nextInt();
         int x = n * 2;
-        int array[] = new int[0];
-        numArray(array, n);
-    }
+        System.out.println("Простые числа из последовательности:");
+        int[] array = numArray(n);
+        System.out.println(Arrays.toString(array));
+        array = twins(n);
 
+
+    }
 
     public static int lineArray(int n) {            //длинна массива равна количеству простых чисел .
         int t = 0;
@@ -32,14 +35,12 @@ public class Method13 {
             if (prime) {
                 t++;
             }
-
         }
-
         return t; // t= количству простых чисел .
     }
 
-    public static int[] numArray(int array[], int n) {      //заполняем массив простыми числами
-        array = new int[lineArray(n)];
+    public static int[] numArray(int n) {      //заполняем массив простыми числами
+        int[] array = new int[lineArray(n)];
 
         int k = 0;
 
@@ -57,29 +58,20 @@ public class Method13 {
                 k++;
             }
         }
-        System.out.println("Простые числа из данной последовательности:");
-        System.out.println(Arrays.toString(array));
+        return array;
+    }
 
-        for (int i = 0; i < array.length; i++) {
+    public static int[] twins(int n) {                // ищем в массиве заполненный числами простыми ..близнецы
+
+        int[] array = numArray(n);
+
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] + 2 == array[i + 1]) {
+
                 System.out.println("Близнецы:" + array[i] + " и " + array[i + 1]);
             }
         }
         return array;
     }
-//    public static int  twins (int n){       // ищем в массиве заполненный числами простыми ..близнецы
-//       numArray()
-//
-//        int t1 = 0;
-//        int t2 = 0;
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] == array[i+2]){
-//                t1 =array[i];
-//                t2 = array[i+2];
-//                System.out.println("Близнецы:"+ t1 +t2);
-//            }
-//        }
-//        return t1;
-//    }
 }
 

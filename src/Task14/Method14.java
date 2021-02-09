@@ -11,9 +11,8 @@ public class Method14 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите до какого числа запустить проверку:");
         int n = scanner.nextInt();
-        int array[] = new int[0];
-        numArmstrong(array,n);
-
+        int array[] = numArmstrong(n);
+        System.out.println(Arrays.toString(array));
     }
 
     public static int amountNum(int n) {
@@ -35,7 +34,7 @@ public class Method14 {
         }
         int sum = 0;                                       // сумма цифр числа воведенная в степень
         for (int i = 0; i < array.length; i++) {
-            sum = (int) (sum + Math.pow(array[i], amountNum(array[i])));
+            sum = (int) (sum + Math.pow(array[i], array.length));
         }
         return sum;
     }
@@ -51,9 +50,9 @@ public class Method14 {
         return a;
     }
 
-    public static int[] numArmstrong(int array[], int n) {        // забиваю числа аpмстронга в массив.
+    public static int [] numArmstrong( int n) {        // забиваю числа аpмстронга в массив.
 
-        array = new int[amountArmstrong(n)];
+        int [] array = new int[amountArmstrong(n)];
         int a = 0;
         for (int i = 1; i < n; i++) {
             if (i == sumNum(i)) {
@@ -61,7 +60,7 @@ public class Method14 {
                 a++;
             }
         }
-        System.out.println(Arrays.toString(array));
+
         return array;
     }
 }

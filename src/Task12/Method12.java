@@ -13,8 +13,9 @@ public class Method12 {
         int n = scanner.nextInt();
         System.out.print("Введите значение суммы цифр: ");
         int k = scanner.nextInt();
-        int array[] = new int[0];
-        numArray(array, n, k);
+        int array[] = numArray(n, k);
+        System.out.println(Arrays.toString(array));
+
     }
 
     public static int arrayLength(int n, int k) {
@@ -29,8 +30,8 @@ public class Method12 {
         return t;
     }
 
-    public static int[] numArray(int array[], int n, int k) {
-        array = new int[arrayLength(n, k)];
+    public static int[] numArray(int n, int k) {
+        int[] array = new int[arrayLength(n, k)];
         int i = 0;                                  //через переменную инициализирую массив ...
 
         for (int j = 1; j <= n; j++) {
@@ -39,10 +40,7 @@ public class Method12 {
                 array[i] = j;
                 i++;
             }
-
         }
-
-        System.out.println(Arrays.toString(array));
         return array;
     }
 }

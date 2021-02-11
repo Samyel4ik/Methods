@@ -30,7 +30,6 @@ public class Method4 {
     }
 
     public static double distanse(double array[][]) {
-        double array1[][] = {{1, 2}, {3, 4}};
         double arrayN1[] = array[0];
         double arrayN2[] = array[0];
         double distanseMax = Math.sqrt(Math.pow((array[0][0] - array[1][0]), 2) + Math.pow((array[0][1] - array[1][1]), 2));

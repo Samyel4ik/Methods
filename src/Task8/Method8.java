@@ -19,18 +19,18 @@ public class Method8 {
         int num1 = k - 1;
         int num2 = m - 1;
 
-        int array[] = new int[d];
-        initialization(array);
-        System.out.println("Сумма последовательных чисел:");
+        int array[] = initialization(d);
+        System.out.println(Arrays.toString(array));
+        System.out.println("Сумма 3-x последовательных чисел:");
         sumNumArray(array, num1, num2);
     }
 
-    public static int[] initialization(int array[]) {
+    public static int [] initialization(int d) {
+        int [] array = new int[d];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(20);
         }
-        System.out.println(Arrays.toString(array));
         return array;
     }
 

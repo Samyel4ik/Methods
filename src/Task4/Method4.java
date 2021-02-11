@@ -19,15 +19,7 @@ public class Method4 {
             array[i] = arrayRead(num);
         }
         System.out.println("Количество точек и их координаты:");
-        initialization(array);
-
         System.out.println(distanse(array));
-    }
-
-    public static void initialization(double[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(Arrays.toString(array[i]));
-        }
     }
 
     public static double[] arrayRead(Scanner num) {  //

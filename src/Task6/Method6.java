@@ -12,8 +12,12 @@ public class Method6 {
         int b = num.nextInt();
         System.out.print("Введите значение третьего числа: ");
         int c = num.nextInt();
-        System.out.println();
-        System.out.println("Наибольший общий делитель двух чисел: " + noD(a, b, c));
+        int nod = noD(a, b, c);
+        if (nod == 1) {
+            System.out.println("Являются взаимно простыми");
+        } else {
+            System.out.println("Не являются взаимно простыми");
+        }
     }
 
     public static int noD(int a, int b, int c) {
@@ -22,12 +26,6 @@ public class Method6 {
             if (a % i == 0 && b % i == 0 && c % i == 0) {
                 nod = i;
             }
-        }
-        if (nod == 1) {
-            System.out.println("Являются взаимно простыми");
-        } else {
-            System.out.println("Не являются взаимно простыми");
-
         }
         return nod;
     }

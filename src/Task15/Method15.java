@@ -33,9 +33,10 @@ public class Method15 {
         }
         boolean t = true;
         for (int j = 0; j < array.length - 1; j++) {               // проверяем цифры числа на ворастание (из последовательности)
-            if (array[j] + 1 != array[j + 1]) {
+            if (array[j] > array[j + 1]) {
                 t = false;
             }
+
         }
         return t;
     }

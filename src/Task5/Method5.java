@@ -28,21 +28,18 @@ public class Method5 {
     }
 
     public static int minMaxMin(int array[]) {
-        int a = 0;
-        while (a == 0) {
-            a = 1;
-
+        boolean sorting = true;
+        while (!sorting) {
+            sorting = true;
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     int t = array[i];
-                    a = 0;
                     array[i] = array[i + 1];
                     array[i + 1] = t;
+                    sorting = false;
                 }
             }
         }
-//        System.out.println("Отсортированный массив:");
-//        System.out.println(Arrays.toString(array));
         int num = array[array.length - 2];
         return num;
     }

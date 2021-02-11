@@ -14,18 +14,17 @@ public class Method7 {
         return num;
     }
 
-    public static int sumFactorial(int array[], int n) {
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum += factorialNum(array[i]);
+    public static int sumFactorial(int array[]) {
+        int sum =0;
+        for (int i = 0; i < array.length; i++) {
+           sum+= factorialNum(array[i]);
         }
         return sum;
     }
 
     public static void main(String[] args) {
         int array[] = {1, 3, 5, 7, 9};
-        int n = array.length;
         System.out.println(Arrays.toString(array));
-        System.out.println("Сумма факториалов данных чисел: " + sumFactorial(array, n));
+        System.out.println("Сумма факториалов данных чисел: " + sumFactorial(array));
     }
 }

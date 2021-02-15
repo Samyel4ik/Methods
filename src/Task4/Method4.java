@@ -18,7 +18,7 @@ public class Method4 {
             System.out.println();
             array[i] = arrayRead(num);
         }
-        System.out.println("Количество точек и их координаты:");
+
         System.out.println(distanse(array));
     }
 
@@ -29,16 +29,18 @@ public class Method4 {
         return array;
     }
 
-    public static double distanse(double array[][]) {
-        double arrayN1[] = array[0];
-        double arrayN2[] = array[0];
-        double distanseMax = Math.sqrt(Math.pow((array[0][0] - array[1][0]), 2) + Math.pow((array[0][1] - array[1][1]), 2));
+    public static double distanseMax(double array[][]) {
 
+        return Math.sqrt(Math.pow((array[0][0] - array[1][0]), 2) + Math.pow((array[0][1] - array[1][1]), 2));
+    }
+        public static double distanse(double[][] array) {
+            double arrayN1[] = array[0];
+            double arrayN2[] = array[0];
+            double distanse = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                double distanse = Math.sqrt(Math.pow((array[i][0] - array[j][0]), 2) + Math.pow((array[i][1] - array[j][1]), 2));
-                if (distanseMax < distanse) {
-                    distanseMax = distanse;
+                 distanse = Math.sqrt(Math.pow((array[i][0] - array[j][0]), 2) + Math.pow((array[i][1] - array[j][1]), 2));
+                if (distanseMax(array) < distanse) {
                     arrayN1 = array[i];
                     arrayN2 = array[j];
                 }
@@ -49,6 +51,6 @@ public class Method4 {
         System.out.println("Координата второй точки: ");
         System.out.println(Arrays.toString(arrayN2));
         System.out.println("Самое большое расстояни между данными двумя точками составило:");
-        return distanseMax;
+        return distanse;
     }
 }

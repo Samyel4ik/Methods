@@ -14,8 +14,7 @@ public class Method3 {
        System.out.println("Площадь правильного многоугольника с данной стороной: " + polygonArea);
    }
    public static  double triangleArea (int a){
-       double area = ( Math.sqrt(3) * Math.pow(a,2))/4;
-       return area;
+       return  ( Math.sqrt(3) * Math.pow(a,2))/4;
    }
 }
 

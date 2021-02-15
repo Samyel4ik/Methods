@@ -11,24 +11,25 @@ public class Method5 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите длинну массива:");
         int n = scanner.nextInt();
-        int array[] = new int[n];
-        in(array);
-        int minMax = minMaxMin(array);
-        System.out.println("Число которое меньше максимального ,но больше всех других элементов: " + minMax);
+
+        System.out.println("Число которое меньше максимального ,но больше всех других элементов: " + minMaxMin(n));
     }
 
-    public static int[] in(int[] array) {                       // метод инициализации
+    public static int[] in(int n) {                       // метод инициализации
+       int [] array = new int[n];
         Random random = new Random();
+
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(100) - 50;
+            array[i] = random.nextInt(100);
         }
         System.out.println("Исходный массив:");
         System.out.println(Arrays.toString(array));
         return array;
     }
 
-    public static int minMaxMin(int array[]) {
-        boolean sorting = true;
+    public static int minMaxMin(int n) {
+        int [] array = in(n);
+        boolean sorting = false;
         while (!sorting) {
             sorting = true;
             for (int i = 0; i < array.length - 1; i++) {
@@ -40,8 +41,8 @@ public class Method5 {
                 }
             }
         }
-        int num = array[array.length - 2];
-        return num;
+       // System.out.println(Arrays.toString(array));
+        return array[array.length - 2];
     }
 }
 

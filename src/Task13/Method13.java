@@ -60,15 +60,13 @@ public class Method13 {
         return array;
     }
 
-    public static int twins(int [] array) {                // ищем в массиве заполненный числами простыми ..количество блиблизнецы
-        int t = 0;
+    public static void twins(int[] array) {                // ищем в массиве заполненный числами простыми близнецы
+
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] + 2 == array[i + 1]) {
-                t++;
                 System.out.println("Близнецы:" + array[i] + " и " + array[i + 1]);
             }
         }
-        return t;
     }
 }
 
